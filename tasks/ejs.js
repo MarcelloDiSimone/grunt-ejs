@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       options = this.options();
       var out = file.src.map(grunt.file.read).join('');
       options.filename = file.src[0];
-      grunt.file.write(file.dest, ejs.render(out, options));
+      grunt.file.write(file.dest, ejs.render(out, options, options.settings));
       grunt.log.ok('Wrote ' + file.dest);
     }, this);
   });
